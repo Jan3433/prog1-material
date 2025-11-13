@@ -44,12 +44,21 @@ type ChessPiece struct {
 // auf dieses Feld ziehen darf.
 // Besonderheiten wie Rochade oder im Weg stehende Figuren
 // Spielen keine Rolle.
+
+// MoveAllowed erwartet eine Feld-Angabe und liefert true,
+// falls die Figur nach den Bewegungsregeln beim Schach
+// auf dieses Feld ziehen darf.
+// Besonderheiten wie Rochade oder im Weg stehende Figuren
+// Spielen keine Rolle.
 func (p ChessPiece) MoveAllowed(row, col int) bool {
 
-	// switch p.pieceType {
-	// case BISHOP: ...
-	// case KNIGHT: ...
-	// }
+	if row < 0 || col < 0 || row > 7 || col > 7 {
+		return false
+	}
+
+	if row == p.row && col == p.column {
+		return false
+	}
 
 	if p.pieceType == BISHOP {
 		// Diagonale von links unten nach rechts oben.
@@ -61,9 +70,31 @@ func (p ChessPiece) MoveAllowed(row, col int) bool {
 			return true
 		}
 	}
-	if p.pieceType == KNIGHT {
-		/* ... */
-	}
 
+	if p.pieceType == ROOK {
+		if row == p.row || col == p.column {
+			return true
+		}
+
+		if p.pieceType == PAWN {
+
+			if row == p.row {
+				return true
+			}
+			if col+1 == p.column {
+				return true
+			}
+			if row == 1 && p.colour == WHITE || row == 6 && p.colour == BLACK {
+				if p.row+2 == row {
+					return true
+				}
+			}
+
+			if p.pieceType == QUEEN {
+
+			}
+		}
+	}
 	return false
+
 }
