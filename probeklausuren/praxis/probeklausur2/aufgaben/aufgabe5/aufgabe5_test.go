@@ -7,7 +7,7 @@ func ExampleReplaceEn() {
 	dict2 := []Entry{{"Haus", "house"}, {"Holz", "wood"}, {"Fahrrad", "bicycle"}, {"Holz", "wood"}, {"Wald", "wood"}}
 
 	ReplaceEn(dict1, "Holz", "timber")
-	ReplaceEn(dict1, "Maus", "mouse")
+	ReplaceEn(dict2, "Maus", "mouse")
 
 	fmt.Println(dict1)
 	fmt.Println(dict2)

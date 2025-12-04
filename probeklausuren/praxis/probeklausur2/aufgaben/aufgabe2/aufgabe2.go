@@ -16,6 +16,7 @@ func FilterDigits(s string) string {
 		} else {
 			result += string(s[i])
 		}
+
 	}
 
 	return result
