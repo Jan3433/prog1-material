@@ -3,7 +3,7 @@ package aufgabe6
 import "fmt"
 
 func ExampleDuplicateSinglets() {
-	l1 := []int{1, 2, 3}
+	l1 := []int{1, 1, 2, 3, 4, 4, 4, 5, 6, 7, 7}
 	l2 := []int{1, 2, 3, 1}
 	l3 := []int{1, 2, 3, 1, 2, 3}
 

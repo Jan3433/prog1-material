@@ -24,7 +24,11 @@ func ElementSums(l1, l2 []int) []int {
 	}
 
 	for i := 0; i < max; i++ {
-
+		// i -> max  0 1 2 3 4 5
+		// l1 1,2,3,4,5 = 5
+		// l2 1,2,3,4,5,6,7 = 7
+		//Max = l2
+		// i = 0 < 5, 7 i = 1 < 5, 7 ,.... i = 5 = 5, current1 = letzter wert +
 		if len(l1) > i {
 			current1 = l1[i]
 		}
