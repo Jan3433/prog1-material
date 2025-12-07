@@ -5,15 +5,15 @@ import "fmt"
 func ExampleFilterDigits() {
 
 	fmt.Println(FilterDigits("a123b"))
-	fmt.Println(FilterDigits("abcde"))
+	fmt.Println(FilterDigits("aBcde"))
 	fmt.Println(FilterDigits("0123456789"))
-	fmt.Println(FilterDigits("1a9b"))
+	fmt.Println(FilterDigits("1A9b"))
 	fmt.Println(FilterDigits(""))
 
 	// Output:
-	// ab
-	// abcde
+	// 123
 	//
-	// ab
+	//0123456789
+	// 19
 	//
 }
